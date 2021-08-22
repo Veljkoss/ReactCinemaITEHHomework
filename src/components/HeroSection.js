@@ -9,8 +9,7 @@ function HeroSection(){
             <h1>CHOOSE A MOVIE</h1>
             <div className="cards-section">
                 {movies.map((value, index) => {
-                    console.log(value.title)
-                    return <MyCard movie={value} />
+                    return <MyCard title={value.title} imageUrl={value.imageUrl} description={value.description} id={value.id} showButton="true" />
                 })}
             </div>
         </div>

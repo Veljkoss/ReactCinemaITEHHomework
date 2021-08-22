@@ -2,8 +2,14 @@ import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import  {Link}  from 'react-router-dom';
 import './MyNavbar.css'
-
 function MyNavbar() {
+    const [time, setTime] = React.useState(new Date().toLocaleTimeString())
+    let startTime = () => {
+        setTime(new Date().toLocaleTimeString())
+    }
+    setInterval(startTime, 1000);
+
+    
     return(
         <>
              <Navbar bg="dark" variant="dark">
@@ -23,12 +29,17 @@ function MyNavbar() {
                         <Navbar.Text className="navbarText">
                                 Home
                         </Navbar.Text>
+                        <Navbar.Text className="navbarTime">
+                            <div id="time">Current time: {time}</div>
+                        </Navbar.Text>
                     </Link>
                 </Container>
             </Navbar>
             
         </>
     )
+    
 }
+
 
 export default MyNavbar;

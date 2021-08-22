@@ -4,23 +4,29 @@ import { Link } from 'react-router-dom'
 import './MyCard.css'
 
 function MyCard(props) {
+    let MyButton = () =><div> <Link to={`/info`} onClick={()=>localStorage.setItem('currentMovieId', props.id)}>
+    <Button variant="danger" className="card-button" >More info</Button>
+    </Link></div>
     return (
         <div className="myCard">
-            <Card style={{ width: '18rem', height: '29rem'}}>
-            <Card.Img variant="top" src={props.movie.imageUrl} className="card-image"/>
+            <Card style={{ width: '18rem', height: props.showButton === "true" ? '29rem' : '18rem'}}>
+            <Card.Img variant="top" src={props.imageUrl} className="card-image"/>
             <Card.Body>
-                <Card.Title>{props.movie.title}</Card.Title>
+                <Card.Title>{props.title}</Card.Title>
+                
+                
                 <Card.Text>
-                         {props.movie.description}
+                         {props.description}
                 </Card.Text>
-                <Link to={`/info`} onClick={localStorage.setItem('currentMovieId', props.movie.id)}>
-                    <Button variant="primary" className="card-button" >More info</Button>
-                 </Link>
+                {console.log(props.showButton)}
+                {props.showButton === "true" ? <MyButton/> : null}
                 
             </Card.Body>
             </Card>
         </div>
     )
+
+    
 }
 
 export default MyCard

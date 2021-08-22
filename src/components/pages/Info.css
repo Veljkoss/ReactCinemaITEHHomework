@@ -7,3 +7,22 @@
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
 }
+
+.info-section > h1 {
+    color: #fff;
+    font-size: 80px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.info-section > h2 {
+    color: #fff;
+    text-align: justify;
+    font-size: 25px;
+    margin-top: 10px;
+    margin: 10px 30% 40px 30%;
+    margin-bottom: 40px;
+}
+
+.actors{
+    margin-top: 20px;
+}

@@ -5,3 +5,7 @@
     padding-top: auto;
     font-size: 30px;
 }
+.navbarTime{
+    position: absolute;
+    right: 40px;
+}
